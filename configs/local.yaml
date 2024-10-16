@@ -1,0 +1,6 @@
+influx:
+  influxURL: http://localhost:8086
+  authToken: yRiXKNVbNHjsF-QOngDADGYIEQPBZt8BwMZNbPoQx4t8y8mdNKMb__e1-KNQSNTFct4z0XygloApL4opkk6oUQ==
+  org: my-org
+  bucket: my-bucket
+  timeout: 0s
