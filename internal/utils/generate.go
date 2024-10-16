@@ -13,7 +13,7 @@ func GenerateTemperature(timestamp int64, sensorId float64) float64 {
 	timeInHours := float64(timestamp) / 3600.0
 	sineValue := amplitude * math.Sin(2*math.Pi*timeInHours/period)
 
-	noise := rand.Float64()*2.0 - 0.5
+	noise := rand.Float64()*1.0 - 0.5
 
 	return baseTemp + sineValue + noise
 }
