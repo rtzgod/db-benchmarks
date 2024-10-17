@@ -10,8 +10,16 @@ services:
       - INFLUXDB_ORG=my-org
       - INFLUXDB_BUCKET=my-bucket
       - INFLUXDB_TOKEN=my-token
-    volumes:
-      - influxdb_data:/var/lib/influxdb2
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg16
+    container_name: timescaledb
+    environment:
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+    ports:
+      - "5436:5432"
 
   grafana:
     image: grafana/grafana:latest
@@ -21,5 +29,3 @@ services:
     depends_on:
       - influxdb
 
-volumes:
-  influxdb_data:

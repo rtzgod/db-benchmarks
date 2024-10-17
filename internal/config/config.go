@@ -9,7 +9,8 @@ import (
 )
 
 type Config struct {
-	Influx InfluxConfig `yaml:"influx"`
+	Influx    InfluxConfig    `yaml:"influx"`
+	Timescale TimescaleConfig `yaml:"timescale"`
 }
 
 type InfluxConfig struct {
@@ -17,6 +18,11 @@ type InfluxConfig struct {
 	Token   string        `yaml:"authToken"`
 	Org     string        `yaml:"org"`
 	Bucket  string        `yaml:"bucket"`
+	Timeout time.Duration `yaml:"timeout"`
+}
+
+type TimescaleConfig struct {
+	URL     string        `yaml:"timescaleURL"`
 	Timeout time.Duration `yaml:"timeout"`
 }
 

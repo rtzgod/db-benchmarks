@@ -1,6 +1,9 @@
 influx:
   influxURL: http://localhost:8086
-  authToken: yRiXKNVbNHjsF-QOngDADGYIEQPBZt8BwMZNbPoQx4t8y8mdNKMb__e1-KNQSNTFct4z0XygloApL4opkk6oUQ==
+  authToken: oXkxrOXUxqeu0FwlHLf9-w39LTkIyDU4fzVg36x1kzXgh8cNWI1mTm0ETXntdS580mwAkl9Fxtqv6BOWNKu7Mw==
   org: my-org
   bucket: my-bucket
+  timeout: 0s
+timescale:
+  timescaleURL: postgres://postgres:1@localhost:5436/postgres
   timeout: 0s

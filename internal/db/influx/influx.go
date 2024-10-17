@@ -30,7 +30,7 @@ func New(URL, token, org, bucket string, timeout time.Duration) *Influx {
 	}
 }
 
-func (i *Influx) BenchmarkInfluxWrite(dataPoints, sensorsAmount float32) {
+func (i *Influx) BenchmarkWrite(dataPoints, sensorsAmount float32) {
 	var wg sync.WaitGroup
 	startTime := time.Now()
 
@@ -71,7 +71,7 @@ func (i *Influx) WritePoint(dataPoints int, sensor int) {
 	}
 }
 
-func (i *Influx) BenchmarkInfluxRead(queries int) {
+func (i *Influx) BenchmarkRead(queries int) {
 	query := fmt.Sprintf("from(bucket:\"%s\") |> range(start: -1h)", i.BucketName)
 	queryAPI := i.Client.QueryAPI("my-org")
 
